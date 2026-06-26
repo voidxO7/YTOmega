@@ -47,6 +47,3 @@
 	path = Tweaks/FLEXing
 	url = https://github.com/PoomSmart/FLEXing.git
 	branch = rootless
-[submodule "Tweaks/NoYTPremium"]
-	path = Tweaks/NoYTPremium
-	url = https://github.com/PoomSmart/NoYTPremium.git
