@@ -1,0 +1,28 @@
+name: Add Submodule
+
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: 'Path for the submodule'
+        required: true
+      url:
+        description: 'Repo URL'
+        required: true
+
+jobs:
+  add-submodule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add submodule
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git submodule add ${{ github.event.inputs.url }} ${{ github.event.inputs.path }}
+          git commit -m "Add submodule ${{ github.event.inputs.path }}"
+          git push
