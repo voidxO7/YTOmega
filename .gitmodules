@@ -56,3 +56,6 @@
 [submodule "Tweaks/YTClassicVideoQuality"]
 	path = Tweaks/YTClassicVideoQuality
 	url = https://github.com/PoomSmart/YTClassicVideoQuality.git
+[submodule "Tweaks/YouQuality"]
+	path = Tweaks/YouQuality
+	url = https://github.com/PoomSmart/YouQuality.git
