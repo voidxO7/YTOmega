@@ -181,7 +181,7 @@ jobs:
           # Build the package
           make package SIDELOAD=1 THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1 YTLITE_VERSION=${{ env.YTLITE_VERSION }}
           # Rename the package based on the version
-          (mv "packages/$(ls -t packages | head -n1)" "packages/YTLitePlus_${{ env.YT_VERSION }}_${{ env.YTLITE_VERSION }}.ipa")
+          (mv "packages/$(ls -t packages | head -n1)" "packages/voidxO7_${{ env.YT_VERSION }}_${{ env.YTLITE_VERSION }}.ipa")
           # Pass package name to the upload step
           echo "package=$(ls -t packages | head -n1)" >> $GITHUB_OUTPUT
           # Print out the hash and bundle ID
@@ -196,7 +196,7 @@ jobs:
         if: ${{ inputs.upload_artifact }}
         uses: actions/upload-artifact@v4.5.0
         with:
-          name: YTLitePlus_${{ env.YT_VERSION }}_${{ env.YTLITE_VERSION }}
+          name: voidxO7_${{ env.YT_VERSION }}_${{ env.YTLITE_VERSION }}
           path: packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
           
